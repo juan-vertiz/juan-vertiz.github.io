@@ -1,0 +1,15 @@
+---
+import Navbar from './Navbar.astro';
+import Socials from './Socials.astro';
+
+const { activeItem } = Astro.props;
+---
+<header>
+  <Navbar activeItem={activeItem} />
+  <Socials />
+</header>
+<style>
+  header {
+    display: flex;
+  }
+</style>

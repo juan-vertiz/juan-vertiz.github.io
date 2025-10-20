@@ -1,16 +1,57 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
 
+const professionalExperience = [
+  {
+    title: 'Software Test Automation Engineer',
+    place: 'EPAM Systems',
+    dateRange: 'AUG 2025 - Present',
+    content: [
+
+    ],
+  },
+  {
+    title: 'Test Automation Engineer',
+    place: 'P\\S\\L Group',
+    dateRange: 'SEP 2024 - AUG 2025',
+    content: [
+      'Designed and executed functional and non-functional test cases based on functional requirements.',
+      'Conducted exploratory testing across 4 web applications, identifying and logging functional and UX issues.',
+      'Built and maintained multiple Playwright automation suites, reducing regression cycle time by 30%.',
+      'Logged and tracked defects in Jira Cloud, accelerating average resolution time by 15%.',
+    ],
+  },
+  {
+    title: 'Test Automation Engineer',
+    place: 'NEORIS',
+    dateRange: 'JUL 2022 - SEP 2024',
+    content: [
+      'Automated Robot Framework test suites for 5+ client projects, increasing test coverage by 80%.',
+      'Delivered 5+ proof-of-concept automation demos during pre-sales, contributing to awarded contracts.',
+      'Developed an internal tool with Python and GitHub Actions to monitor public repositories, cutting manual brand-tracking time by 25 hours per month.',
+      'Streamlined ETL processes for 2 financial data sources using Robot Framework, compressing a 48-hour task into 20 minutes per deliverable.',
+      'Created inner-source keyword libraries with 10+ reusable Robot Framework keywords, decreasing new test script development time by 10% per project.',
+    ],
+  },
+  {
+    title: 'Full-stack Developer',
+    place: 'Yanfeng Automotive Interiors',
+    dateRange: 'JUN 2021 - DEC 2021',
+    content: ['Developed a production-planning web app in CodeIgniter, processing BOM items and cutting WIP inventory by 20%.'],
+  },
+];
+
+const education = [
+  {
+    title: 'Bachelor of Science in Computer Systems Engineering ',
+    place: 'TecNM Campus Querétaro',
+    dateRange: 'AUG 2018 - JUL 2023',
+  },
+];
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle="Juan Vertiz" activeItem="home">
+  <p>Hi! I'm a passionate software development engineer in test with a focus web automation and backend services.</p>
+  <Timeline title="Professional Experience" items={professionalExperience} />
+  <Timeline title="Education" items={education} />
+</BaseLayout>
