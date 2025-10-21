@@ -18,7 +18,9 @@ const { pageTitle, activeItem } = Astro.props;
 </head>
 <body>
   <Header activeItem={activeItem} />
-  <h1>{pageTitle}</h1>
-  <slot />
+  <main>
+    <h1>{pageTitle}</h1>
+    <slot />
+  </main>
 </body>
 </html>

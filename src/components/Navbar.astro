@@ -2,12 +2,28 @@
 const { activeItem } = Astro.props;
 ---
 <nav>
-  <a href="/" class:list={[{ active: activeItem == 'home' }]}>Home</a>
-  <a href="/projects" class:list={[{ active: activeItem == 'projects' }]}>Projects</a>
-  <a href="/blog" class:list={[{ active: activeItem == 'blog' }]}>Blog</a>
+  <a href="/" class:list={[{ active: activeItem == 'home' }]}><div>Home</div></a>
+  <a href="/projects" class:list={[{ active: activeItem == 'projects' }]}><div>Projects</div></a>
+  <a href="/blog" class:list={[{ active: activeItem == 'blog' }]}><div>Blog</div></a>
 </nav>
 <style>
   nav {
     flex-grow: 2;
+  }
+
+  a {
+    display: inline-flex;
+    height: 100%;
+    padding: 0 2em;
+    align-items: center;
+    color: var(--fgColor-muted);
+  }
+
+  a.active {
+    border-bottom: 4px solid var(--fgColor-accent);
+  }
+
+  a:hover {
+    color: var(--fgColor-accent);
   }
 </style>

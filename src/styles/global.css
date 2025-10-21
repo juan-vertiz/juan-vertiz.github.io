@@ -10,22 +10,31 @@
   --fgColor-default: #f0f6fc;
   --fgColor-muted: #9198a1;
   --fgColor-accent: #4493f8;
+
+  --main-max-width: 60vw;
+  --main-padding: 0 1rem;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
-  max-width: 80ch;
-  padding: 0 1rem;
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+  background-color: var(--bgColor-default);
+  color: var(--fgColor-default);
 }
 
 a {
   color: var(--fgColor-accent);
   text-decoration: none;
+}
+
+main {
+  margin: 3em auto;
+  max-width: var(--main-max-width);
+  padding: var(--main-padding);
 }
 

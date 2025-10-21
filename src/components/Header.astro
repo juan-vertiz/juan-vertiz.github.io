@@ -11,5 +11,10 @@ const { activeItem } = Astro.props;
 <style>
   header {
     display: flex;
+    align-items: stretch;
+    background-color: var(--bgColor-muted);
+    padding: 0 calc((100vw - var(--main-max-width)) / 2);
+    height: 3em;
+    border-bottom: 4px solid var(--bgColor-muted);
   }
 </style>
