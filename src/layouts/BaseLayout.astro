@@ -3,7 +3,17 @@ import '../styles/reset.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 
-const { pageTitle, activeItem } = Astro.props;
+interface Props {
+  pageTitle: string;
+  activeItem: string;
+  ogImage?: {
+    title: string,
+    description: string,
+    url: string,
+  }
+}
+
+const { pageTitle, activeItem, ogImage } = Astro.props;
 ---
 <html lang="en">
 <head>
@@ -15,6 +25,9 @@ const { pageTitle, activeItem } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta property="og:title" content={ogImage?.title ?? 'Juan Vertiz'}>
+  <meta property="og:description" content={ogImage?.description ?? 'Portfolio & Blog'}>
+  <meta property="og:image" content={ogImage?.url ?? `${Astro.site}assets/images/2025-10-23.jpeg`}>
 </head>
 <body>
   <Header activeItem={activeItem} />
