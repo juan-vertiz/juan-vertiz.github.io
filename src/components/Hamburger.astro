@@ -1,0 +1,27 @@
+---
+import HamburgerIcon from '../assets/images/hamburger.svg';
+
+---
+<button aria-expanded="false" aria-controls="navbar" class="hamburger">
+  <HamburgerIcon width={24} height={24} fill="currentColor"/>
+</button>
+<style>
+  button {
+    background-color: transparent;
+    color: var(--fgColor-default);
+    border: none;
+    cursor: pointer;
+    margin-left: 1em;
+    padding: 0;
+  }
+
+  button:active {
+    color: var(--fgColor-muted);
+  }
+
+  @media screen and (min-width: 636px) {
+    .hamburger {
+      display: none;
+    }
+  }
+</style>

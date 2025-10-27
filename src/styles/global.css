@@ -33,8 +33,18 @@ a {
 }
 
 main {
-  margin: 3em auto;
+  margin: 0 auto;
   max-width: var(--main-max-width);
   padding: var(--main-padding);
 }
 
+:has(.hamburger[aria-expanded="true"]) nav {
+  display: flex;
+  max-height: 100px;
+}
+
+@media screen and (min-width: 636px) {
+  main {
+    margin-top: 3em;
+  }
+}

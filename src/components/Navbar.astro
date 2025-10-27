@@ -1,29 +1,50 @@
 ---
 const { activeItem } = Astro.props;
 ---
-<nav>
-  <a href="/" class:list={[{ active: activeItem == 'home' }]}><div>Home</div></a>
-  <!-- <a href="/projects" class:list={[{ active: activeItem == 'projects' }]}><div>Projects</div></a> -->
-  <a href="/blog" class:list={[{ active: activeItem == 'blog' }]}><div>Blog</div></a>
+<nav id="navbar">
+  <a href="/" class:list={[{ active: activeItem == 'home' }]}>Home</a>
+  <!-- <a href="/projects" class:list={[{ active: activeItem == 'projects' }]}>Projects</a> -->
+  <a href="/blog" class:list={[{ active: activeItem == 'blog' }]}>Blog</a>
 </nav>
 <style>
   nav {
-    flex-grow: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
   }
 
   a {
-    display: inline-flex;
-    height: 100%;
-    padding: 0 2em;
-    align-items: center;
     color: var(--fgColor-muted);
+    text-align: center;
+    padding: 0.5em 0;
   }
 
   a.active {
-    border-bottom: 4px solid var(--fgColor-accent);
+    color: var(--fgColor-accent);
   }
 
   a:hover {
-    color: var(--fgColor-accent);
+    color: var(--fgColor-default);
+  }
+
+  @media screen and (min-width: 636px) {
+    nav {
+      display: flex;
+      max-height: 100px;
+      flex-direction: row;
+      order: -1;
+      align-items: center;
+      margin: 0;
+      gap: 2em;
+      transition: none;
+    }
+
+    a {
+      padding: 0;
+    }
   }
 </style>

@@ -8,7 +8,8 @@
   div {
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: 1em;
+    margin: 0 16px;
   }
 
   svg {
@@ -21,5 +22,11 @@
     display: inline-flex;
     height: 100%;
     align-items: center;
+  }
+
+  @media screen and (min-width: 636px) {
+    div {
+      gap: 2em;
+    }
   }
 </style>
