@@ -7,5 +7,5 @@ const pageTitle = 'Blog';
 const allPosts = await getCollection('posts');
 ---
 <BaseLayout pageTitle={pageTitle} activeItem="blog">
-  <Blog posts={allPosts}/>
+  <Blog posts={allPosts.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime())}/>
 </BaseLayout>
