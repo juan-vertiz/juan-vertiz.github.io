@@ -1,0 +1,16 @@
+---
+import Post from '../components/Post.astro';
+const { posts } = Astro.props;
+---
+<div class="posts">
+  {posts.map((post: any) => (
+    <Post post={post}/>
+  ))}
+</div>
+<style>
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+</style>

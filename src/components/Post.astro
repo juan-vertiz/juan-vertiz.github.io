@@ -1,0 +1,86 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+---
+<a href={`/blog/${post.id}`} class="post">
+  <img src={post.data.image.url} alt={post.data.image.alt}>
+  <div class="post-details">
+    <p class="date">{post.data.pubDate.toDateString()}</p>
+    <p class="title">{post.data.title}</p>
+    <p class="description">{post.data.description}</p>
+  </div>
+</a>
+<style>
+  .post-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 0.5em;
+  }
+
+  .post {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5em;
+    border-radius: 8px;
+    align-items: center;
+  }
+
+  .date {
+    font-size: 80%;
+    color: rgba(var(--fgColor-accent), 0.1);
+    margin: 0;
+  }
+
+  .title {
+    margin: 0;
+    color: var(--fgColor-default);
+  }
+
+  .description {
+    font-size: 80%;
+    color: var(--fgColor-muted);
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 6 / 4;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  @media screen and (min-width: 636px) {
+    .post-details {
+      gap: 1em;
+    }
+
+    .post {
+      gap: 2em;
+      padding: 0.5em;
+    }
+
+    .post:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .date {
+      font-size: 100%;
+      order: 1;
+    }
+
+    .title {
+      font-size: 150%;
+      order: -1;
+    }
+
+    .description {
+      font-size: 120%;
+    }
+  }
+</style>
