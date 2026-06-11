@@ -16,7 +16,7 @@ const SvgIcon = iconPath ? svgs[iconPath] : null;
 ---
 <a
   href={ href }
-  class="border border-light/25 text-light flex gap-4 w-fit p-4 min-w-32 sm:min-w-48 hover:bg-primary hover:text-dark group"
+  class="border border-light/25 text-light flex gap-4 w-fit p-4 w-full sm:min-w-48 hover:bg-primary hover:text-dark group"
 >
   {SvgIcon && <SvgIcon.default width={24} height={24}/>}
   <span class="text-sm/relaxed uppercase tracking-wider me-auto">{ text }</span>
