@@ -1,0 +1,34 @@
+---
+import type { SvgComponent } from 'astro/types';
+import ArrowIcon from '../assets/images/arrow-outward.svg';
+
+const svgs = import.meta.glob<{ default: SvgComponent}>('/src/assets/images/*.svg', { eager: true });
+
+interface Props {
+  text: string;
+  href: string;
+  iconPath?: keyof typeof svgs;
+}
+
+const { text, href, iconPath } = Astro.props;
+
+const SvgIcon = iconPath ? svgs[iconPath] : null;
+---
+<a
+  href={ href }
+  class="border border-light/25 text-light flex gap-4 w-fit p-4 min-w-48 hover:bg-primary hover:text-dark group"
+>
+  {SvgIcon && <SvgIcon.default width={24} height={24}/>}
+  <span class="text-sm/relaxed uppercase tracking-wider me-auto">{ text }</span>
+  <span class="text-primary group-hover:text-dark">
+    <ArrowIcon width={16} height={24}/>
+  </span>
+</a>
+
+<style>
+  img {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+  }
+</style>

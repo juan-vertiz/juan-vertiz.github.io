@@ -1,0 +1,37 @@
+---
+interface Props {
+  text: string;
+  isActive: boolean;
+  href: string;
+}
+
+const { text, isActive, href } = Astro.props;
+---
+<a
+  href={href}
+  class={`flex items-center justify-center text-sm p-8 border-t sm:border-t-0 sm:border-l border-light/25 ${!isActive && 'hover:text-primary'}`  }
+><span class={`px-4 py-1 ${isActive && 'bg-primary text-dark after:text-primary'}`}>{text}</span></a>
+
+<style>
+  body {
+    counter-reset: item;
+  }
+
+  a span {
+    position: relative;
+  }
+
+  a span::before {
+    content: '◼';
+    margin-right: 1rem;
+  }
+
+  a span::after {
+    counter-increment: item;
+    content: counter(item, decimal-leading-zero);
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    font-size: x-small;
+  }
+</style>

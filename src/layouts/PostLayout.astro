@@ -4,36 +4,12 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={`${frontmatter.title}`} activeItem="blog">
-  <p><i>Posted on {frontmatter.pubDate.toLocaleDateString()}</i></p>
-  <div class="tags">{frontmatter.tags.map((tag: string) => <div class="tag">{tag}</div>)}</div>
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt}>
-  <slot />
+  <div class="max-w-4xl min-w-sm mx-auto">
+    <img src={frontmatter.image.url} alt={frontmatter.image.alt} class="w-full mx-auto aspect-9/4 object-cover rounded-md my-6">
+    <p class="italic text-sm mb-2">Posted on {frontmatter.pubDate.toLocaleDateString()}</p>
+    <div class="flex gap-2 mb-8 flex-wrap">{frontmatter.tags.map((tag: string) => <div class="text-dark text-sm bg-primary px-2">{tag}</div>)}</div>
+    <div class="parent text-base/6 [&_p]:mb-4 [&_strong]:text-primary">
+      <slot />
+    </div>
+  </div>
 </BaseLayout>
-<style is:global>
-  .tags {
-    display: flex;
-    gap: 0.5em;
-    margin: 1em 0;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    background-color: var(--bgColor-inset);
-    padding: 0.2em 0.7em;
-    border: 1px solid var(--borderColor-default);
-    line-height: 1;
-    border-radius: 1em;
-    color: var(--fgColor-muted);
-  }
-
-  img {
-    width: 100%;
-    aspect-ratio: 9 / 4;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  p {
-    line-height: 1.5;
-  }
-</style>

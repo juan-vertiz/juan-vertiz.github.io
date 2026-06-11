@@ -7,54 +7,15 @@ interface Props {
 
 const { post } = Astro.props;
 ---
-<a href={`/blog/${post.id}`} class="post">
-  <img src={post.data.image.url} alt={post.data.image.alt}>
-  <div class="post-details">
-    <p class="date">{post.data.pubDate.toDateString()}</p>
-    <p class="title">{post.data.title}</p>
-    <p class="description">{post.data.description}</p>
+<a href={`/blog/${post.id}`} class="flex flex-col rounded-sm align-middle gap-4 relative max-w-md">
+  <img src={post.data.image.url} alt={post.data.image.alt} class="w-full aspect-6/4 object-cover rounded-md">
+  <div class="flex flex-col col-span-2 justify-center gap-1 absolute bottom-0 left-0 right-0 bg-black/30 p-4 rounded-md hover:bg-black/80 transition-colors">
+    <p class="text-sm text-light/80">{post.data.pubDate.toDateString()}</p>
+    <p class="text-2xl text-primary/85">{post.data.title}</p>
+    <p class="text-lg text-light/80">{post.data.description}</p>
   </div>
 </a>
 <style>
-  .post-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 0.5em;
-  }
-
-  .post {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 0.5em;
-    border-radius: 8px;
-    align-items: center;
-  }
-
-  .date {
-    font-size: 80%;
-    color: rgba(var(--fgColor-accent), 0.1);
-    margin: 0;
-  }
-
-  .title {
-    margin: 0;
-    color: var(--fgColor-default);
-  }
-
-  .description {
-    font-size: 80%;
-    color: var(--fgColor-muted);
-    margin: 0;
-  }
-
-  img {
-    width: 100%;
-    aspect-ratio: 6 / 4;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
   @media screen and (min-width: 636px) {
     .post-details {
       gap: 1em;

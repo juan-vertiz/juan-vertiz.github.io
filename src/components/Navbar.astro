@@ -1,50 +1,19 @@
 ---
+import NavbarItem from './NavbarItem.astro';
+
 const { activeItem } = Astro.props;
 ---
-<nav id="navbar">
-  <a href="/" class:list={[{ active: activeItem == 'home' }]}>Home</a>
-  <!-- <a href="/projects" class:list={[{ active: activeItem == 'projects' }]}>Projects</a> -->
-  <a href="/blog" class:list={[{ active: activeItem == 'blog' }]}>Blog</a>
+<nav
+  id="navbar"
+  data-menu
+  class="hidden absolute inset-x-0 top-full z-50 flex-col border-b border-light/25 bg-black sm:static sm:flex sm:h-24 sm:w-full sm:flex-row sm:items-center sm:justify-end sm:border-b-0 sm:bg-transparent"
+>
+  <!-- <NavbarItem text='Portfolio' href='/portfolio' isActive={activeItem === 'portfolio'} /> -->
+  <NavbarItem text='Blog' href='/blog' isActive={activeItem === 'blog'} />
+  <!-- <NavbarItem text='Contact' href='/contact' isActive={activeItem === 'contact'} /> -->
 </nav>
-<style>
-  nav {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in;
-  }
 
-  a {
-    color: var(--fgColor-muted);
-    text-align: center;
-    padding: 0.5em 0;
-  }
+<script>
+  import '../scripts/menu.js';
+</script>
 
-  a.active {
-    color: var(--fgColor-accent);
-  }
-
-  a:hover {
-    color: var(--fgColor-default);
-  }
-
-  @media screen and (min-width: 636px) {
-    nav {
-      display: flex;
-      max-height: 100px;
-      flex-direction: row;
-      order: -1;
-      align-items: center;
-      margin: 0;
-      gap: 2em;
-      transition: none;
-    }
-
-    a {
-      padding: 0;
-    }
-  }
-</style>

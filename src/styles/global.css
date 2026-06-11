@@ -1,50 +1,8 @@
-:root {
-  --borderColor-default: #3d444d;
+@import 'tailwindcss';
 
-  --bgColor-default: #0d1117;
-  --bgColor-muted: #151b23;
-  --bgColor-inset: #010409;
-  --bgColor-accent: #1f6feb;
-
-
-  --fgColor-default: #f0f6fc;
-  --fgColor-muted: #9198a1;
-  --fgColor-accent: #4493f8;
-
-  --main-max-width: 80ch;
-  --main-padding: 0 1rem;
-}
-
-body {
-  margin: 0;
-  width: 100%;
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  background-color: var(--bgColor-default);
-  color: var(--fgColor-default);
-}
-
-a {
-  color: var(--fgColor-accent);
-  text-decoration: none;
-}
-
-main {
-  margin: 0 auto;
-  max-width: var(--main-max-width);
-  padding: var(--main-padding);
-}
-
-:has(.hamburger[aria-expanded="true"]) nav {
-  display: flex;
-  max-height: 100px;
-}
-
-@media screen and (min-width: 636px) {
-  main {
-    margin-top: 3em;
-  }
+@theme inline {
+  --color-primary: #c1d61b;
+  --color-dark: #0e0e0e;
+  --color-light: #c8c8c8;
+  --font-quantico: var(--font-quantico);
 }

@@ -2,15 +2,8 @@
 import Post from '../components/Post.astro';
 const { posts } = Astro.props;
 ---
-<div class="posts">
+<div class="flex flex-wrap gap-8 justify-center lg:justify-start">
   {posts.map((post: any) => (
     <Post post={post}/>
   ))}
 </div>
-<style>
-  .posts {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-</style>
