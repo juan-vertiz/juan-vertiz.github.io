@@ -7,41 +7,11 @@ interface Props {
 
 const { post } = Astro.props;
 ---
-<a href={`/blog/${post.id}`} class="flex flex-col rounded-sm align-middle gap-4 relative max-w-md">
+<a href={`/blog/${post.id}`} class="flex flex-col rounded-sm align-middle gap-4 relative max-w-md min-w-sm">
   <img src={post.data.image.url} alt={post.data.image.alt} class="w-full aspect-6/4 object-cover rounded-md">
-  <div class="flex flex-col col-span-2 justify-center gap-1 absolute bottom-0 left-0 right-0 bg-black/30 p-4 rounded-md hover:bg-black/80 transition-colors">
+  <div class="flex flex-col col-span-2 justify-center gap-0 md:gap-1 absolute bottom-0 left-0 right-0 bg-black/60 p-4 rounded-md hover:bg-black/80 transition-colors">
     <p class="text-sm text-light/80">{post.data.pubDate.toDateString()}</p>
-    <p class="text-2xl text-primary/85">{post.data.title}</p>
-    <p class="text-lg text-light/80">{post.data.description}</p>
+    <p class="text-lg text-primary/85">{post.data.title}</p>
+    <p class="text-sm text-light/80">{post.data.description}</p>
   </div>
 </a>
-<style>
-  @media screen and (min-width: 636px) {
-    .post-details {
-      gap: 1em;
-    }
-
-    .post {
-      gap: 2em;
-      padding: 0.5em;
-    }
-
-    .post:hover {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-
-    .date {
-      font-size: 100%;
-      order: 1;
-    }
-
-    .title {
-      font-size: 150%;
-      order: -1;
-    }
-
-    .description {
-      font-size: 120%;
-    }
-  }
-</style>
