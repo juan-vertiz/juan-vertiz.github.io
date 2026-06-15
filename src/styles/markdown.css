@@ -1,0 +1,93 @@
+#post {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: var(--text-lg);
+    margin-bottom: calc(var(--spacing) * 4);
+    font-weight: bold;
+  }
+
+  p, pre, ul, ol {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+
+  strong {
+    color: var(--color-primary);
+  }
+
+  .astro-code {
+    padding: calc(var(--spacing) * 1);
+  }
+
+  ul, ol {
+    padding-left: calc(var(--spacing) * 10);
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  ol {
+    list-style-type: decimal-leading-zero;
+  }
+
+  li::marker {
+    color: var(--color-primary);
+  }
+
+  p > code {
+    background-color: rgb(from var(--color-secondary) calc(r * 0.1) calc(g * 0.1) calc(b * 0.1));
+    padding: 0 calc(var(--spacing) * 1);
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  a::before {
+    content: "[";
+  }
+
+  a::after {
+    content: "]";
+  }
+
+  .markdown-alert.markdown-alert.markdown-alert-note {
+    border-left-color: var(--color-secondary);
+  }
+
+  .markdown-alert.markdown-alert-note .markdown-alert-title {
+    color: var(--color-secondary);
+  }
+
+  .markdown-alert.markdown-alert.markdown-alert-tip {
+    border-left-color: var(--color-primary);
+  }
+
+  .markdown-alert.markdown-alert-tip .markdown-alert-title {
+    color: var(--color-primary);
+  }
+
+  .markdown-alert.markdown-alert.markdown-alert-important {
+    border-left-color: var(--color-important);
+  }
+
+  .markdown-alert.markdown-alert-important .markdown-alert-title {
+    color: var(--color-important);
+  }
+
+  .markdown-alert.markdown-alert.markdown-alert-warning {
+    border-left-color: var(--color-warning);
+  }
+
+  .markdown-alert.markdown-alert-warning .markdown-alert-title {
+    color: var(--color-warning);
+  }
+
+  .markdown-alert.markdown-alert.markdown-alert-caution {
+    border-left-color: var(--color-caution);
+  }
+
+  .markdown-alert.markdown-alert-caution .markdown-alert-title {
+    color: var(--color-caution);
+  }
+}
+

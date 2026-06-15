@@ -2,6 +2,10 @@
 
 @theme inline {
   --color-primary: #c1d61b;
+  --color-secondary: #01ffff;
+  --color-caution: #ff0d1a;
+  --color-important: #fe00f8;
+  --color-warning: #fee400;
   --color-dark: #0e0e0e;
   --color-light: #c8c8c8;
   --font-quantico: var(--font-quantico);
