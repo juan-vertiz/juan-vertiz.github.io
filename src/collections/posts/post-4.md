@@ -5,7 +5,7 @@ pubDate: 2026-04-06
 image:
   url: /assets/images/2026-04-06.png
   alt: 'Validate Node.js Config with Zod'
-tags: [typescript,javascript,node,development]
+tags: [typescript,javascript,node,development,learning bites]
 ---
 ## Introduction
 

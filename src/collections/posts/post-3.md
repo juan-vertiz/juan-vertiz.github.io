@@ -5,7 +5,7 @@ pubDate: 2026-02-27
 image:
   url: /assets/images/2026-02-27.png
   alt: Insomnia Faker Gotcha
-tags: [insomnia,api testing,faker,test automation]
+tags: [insomnia,api testing,faker,test automation,learning bites]
 ---
 ## Introduction
 
