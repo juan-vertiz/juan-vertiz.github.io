@@ -15,6 +15,7 @@
 
   .astro-code {
     padding: calc(var(--spacing) * 1);
+    font-size: var(--text-sm);
   }
 
   ul, ol {
